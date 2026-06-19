@@ -1,0 +1,181 @@
+{
+  "jobs": [
+    {
+      "id": "16c48b00-559f-4bc7-9c9b-2c7120d83e00",
+      "name": "morning-digest",
+      "description": "Daily 8:30am: sends consolidated Telegram digest of bills, todos and any processed emails",
+      "enabled": true,
+      "createdAtMs": 1778130274061,
+      "updatedAtMs": 1781226652588,
+      "agentId": "main",
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *",
+        "tz": "Australia/Sydney"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check bills and todos for Anna's morning digest.\n\nSTEP 1 — Read both files:\ncat ~/.openclaw/workspace/Bills.md\ncat ~/.openclaw/workspace/Todo.md\n\nSTEP 2 — Check today's date.\n\nSTEP 3 — From Bills.md, check ## Upcoming & Unpaid for bills due today or in the next 3 days.\n\nSTEP 4 — From Todo.md, list all rows where Status is Pending.\n\nSTEP 5 — Return a plain text morning digest:\n\n🌅 Good morning Anna — [date]\n\n💳 Bills due soon:\n- [Bill] — $[amount] due [date] via [provider]\n(or: No bills due in the next 3 days.)\n\n📋 Outstanding todos:\n- [Task] (added [date])\n(or: No outstanding todos.)\n\nIf nothing due and no todos: 'All clear for today — no bills or todos outstanding.'\n\nCRITICAL: Read both files and return the digest. Nothing else.",
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8437776204"
+      },
+      "state": {
+        "nextRunAtMs": 1781303400000,
+        "lastRunAtMs": 1781217443814,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 346998,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
+      },
+      "status": "error"
+    },
+    {
+      "id": "f72a846f-5925-4845-ab3c-0832c283cbd3",
+      "name": "ai-conferences-weekly-update",
+      "description": "Weekly Sunday update: search for new/updated AI conferences and notify Anna",
+      "enabled": true,
+      "createdAtMs": 1772852170753,
+      "updatedAtMs": 1781226889798,
+      "agentId": "main",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 * * 0",
+        "tz": "Australia/Sydney"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Clawdia, Anna's AI assistant. Your task is to update the AI conferences list at /Users/annarussell/.openclaw/workspace/AI_Conferences_2026.md and /Users/annarussell/.openclaw/workspace/AI_Conferences_2026.csv.\n\nIMPORTANT: The main .md file is compact — read it to check what is already listed before adding anything.\n\nSTEP 1 — Run 3 targeted web searches (wait ~8 seconds between each):\n  a) \"AI conference 2026 2027 call for papers\" site:aclweb.org OR site:aaai.org OR site:neurips.cc OR site:icml.cc OR site:iclr.cc\n  b) \"agentic AI ethics alignment conference 2026 2027 new announced\"\n  c) Pick one area that seems least covered: AI ethics / human-AI interaction / AI safety / explainable AI — and search for new conferences in that area\n\nSTEP 2 — Read /Users/annarussell/.openclaw/workspace/AI_Conferences_2026.md (compact format — fast to read).\n\nSTEP 3 — Update files only if you find genuine changes:\n  (a) NEW conferences: add a compact entry to the .md (match existing format — 3–4 lines max per conference) and add a row to the .csv\n  (b) AMENDMENTS: update the relevant entry inline (dates, venues, deadlines, fees, speakers)\n  (c) PAST conferences: if any conference end date has now passed, move its entry to /Users/annarussell/.openclaw/workspace/AI_Conferences_Archive.md and remove from main .md and .csv\n  (d) Update the \"Updated:\" date in the .md header\n\nSTEP 4 — Send Anna a brief summary via Telegram:\n  - NEW conferences added (name, date, location, why relevant)\n  - AMENDMENTS made (what changed, which conference)\n  - Conferences archived (if any)\n  - If nothing changed: say so clearly in 1–2 sentences\n  Keep it concise. No filler.",
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8437776204"
+      },
+      "state": {
+        "nextRunAtMs": 1781409600000,
+        "lastRunAtMs": 1780807872996,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 318760,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 4,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
+      },
+      "status": "error"
+    },
+    {
+      "id": "8c71f6b4-d6e5-4e19-9e10-82c46de49bae",
+      "name": "ai-research-digest-weekly",
+      "description": "Weekly Sunday scan for agentic AI and alignment content from frontier labs and think tanks",
+      "enabled": true,
+      "createdAtMs": 1774338907671,
+      "updatedAtMs": 1781226899256,
+      "agentId": "main",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * 0",
+        "tz": "Australia/Sydney"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Clawdia, Anna's AI assistant. Your task is to scan for recently published content on agentic system architecture and/or AI alignment from frontier labs and think tanks, and report new items to Anna.\n\n## SOURCES\nFrontier labs: Anthropic, OpenAI, Google DeepMind, Meta AI, Mistral, Cohere, xAI\nThink tanks: ARC, MIRI, Redwood Research, CAIS, Apollo Research, UK AISI, Metr\n\n## FILTER — only include:\n- Blog posts or articles authored by named researchers, research leads, or CEO/founder\n- New model cards or model release announcements\n- arXiv preprints authored by researchers at the above orgs\n- Must relate to: agentic system architecture, multi-agent systems, agent safety, AI alignment, interpretability, or AI governance\n- EXCLUDE: press releases, marketing copy, hiring posts, opinion pieces by non-researchers, anything not authored by a named person from a research team or leadership\n\n## DEDUPLICATION\nRead /Users/annarussell/.openclaw/workspace/AI_Research_Digest_seen.json. Only report URLs not already in seen_urls. After selecting items, update seen_urls and last_run, then write the file back.\n\n## SEARCHES — run exactly 3 searches, wait 8 seconds between each:\n1. \"agentic alignment\" (site:anthropic.com OR site:openai.com OR site:deepmind.google OR site:ai.meta.com OR site:mistral.ai OR site:x.ai)\n2. \"agentic alignment interpretability governance\" (site:alignment.org OR site:intelligence.org OR site:redwoodresearch.org OR site:safe.ai OR site:apolloresearch.ai OR site:metr.org OR site:aisi.gov.uk)\n3. arXiv preprint 2026 agentic AI alignment anthropic openai deepmind meta\n\n## OUTPUT FORMAT\nFor each new item:\n**[Title]** — [Author(s)], [Org] — [Date if known]\n*[1–2 sentence summary — what it covers and why relevant]*\n🔗 [URL]\n\n## FINAL STEPS\n1. Prepend new entries to /Users/annarussell/.openclaw/workspace/AI_Research_Digest.md under a \"## Week of [date]\" heading (newest first)\n2. Update /Users/annarussell/.openclaw/workspace/AI_Research_Digest_seen.json\n3. Send Anna a Telegram message with the list of new items (title + summary + URL each), total count, and a one-sentence note if nothing new was found. No filler.",
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "timeoutSeconds": 1200
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8437776204"
+      },
+      "state": {
+        "nextRunAtMs": 1781413200000,
+        "lastRunAtMs": 1780892947032,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 344313,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 2,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
+      },
+      "status": "error"
+    },
+    {
+      "id": "36da79a7-76f8-49d9-8fd9-78b9ca8109e5",
+      "name": "mtb-races-monthly-update",
+      "description": "Monthly update: Australian MTB race calendar 2026, focus on junior categories for 8-year-old",
+      "enabled": true,
+      "createdAtMs": 1780985501349,
+      "updatedAtMs": 1781226693612,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1 * *",
+        "tz": "Australia/Sydney"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are Clawdia, Anna's AI assistant. Update the Australian MTB race calendar for 2026.\n\n## CONTEXT\n- Anna has an 8-year-old who races MTB — junior categories and age divisions are the priority\n- Files to update: /Users/annarussell/.openclaw/workspace/Australian_MTB_Races_2026.md and Australian_MTB_Races_2026.csv\n- Archive past events to /Users/annarussell/.openclaw/workspace/Australian_MTB_Races_Archive.md\n\n## STEP 1 — Run 4 targeted web searches (8 seconds between each):\n1. \"Australian mountain bike race 2026 junior calendar\" site:auscycling.org.au OR site:rockytrailentertainment.com OR site:mtbnationals.org.au\n2. \"Fox SuperFlow Gravity Enduro 2026 schedule\" OR \"Rocky Trail Academy 2026 school series\"\n3. \"Thredbo Gravity Series 2026\" OR \"Shifty Fifty XC 2026\" OR \"Sea Otter Australia 2026\"\n4. \"mountain bike race Australia 2026 junior under 10 under 13\" new events not already in the document\n\n## STEP 2 — Read the current Australian_MTB_Races_2026.md to identify:\n- Events already listed (skip these unless there are updates/corrections)\n- Events that have now passed (archive them)\n- Any genuinely new events to add\n\n## STEP 3 — Archive past events\nMove any events whose end date has passed to Australian_MTB_Races_Archive.md (create if needed, same format).\nRemove them from the main .md and .csv files.\n\n## STEP 4 — Add new events (if any found)\nFor each new event add to BOTH files:\n\n### .md format (match existing style):\n### [Number]. [Event Name] [⭐ if national/championship]\n**Dates:** DD Month YYYY (or date range)\n**Location:** Venue, State\n**Website:** URL\n**Disciplines:** list\n**Age Categories:** list\n**Junior/School Races:** ✅ Yes — [detail] OR ❌ No\n**Entry Fees:** [amounts or TBC]\n**Associated Events:** [if any]\n\n### .csv format (CRITICAL — Excel compatibility):\nColumns: Date,Event,State,Discipline,Junior Races,Age Categories,Entry Fees (Adult),Entry Fees (Junior),Location,Website\n\nDATE FORMATTING RULES (important for Excel):\n- Single day events: YYYY-MM-DD (e.g. 2026-06-14)\n- Multi-day events: YYYY-MM-DD to YYYY-MM-DD (e.g. 2026-06-14 to 2026-06-15)\n- Never use formats like \"14-15 Mar 2026\" or \"13-Mar-26\" — these cause Excel date parsing issues\n\nCSV FORMATTING RULES:\n- Wrap ALL fields containing commas in double quotes\n- Do not use commas inside quoted fields — use semicolons instead\n- Keep each field concise — no paragraph-length text in any cell\n- Max cell length: 100 characters\n\n## STEP 5 — Update corrections\nFix any date format inconsistencies found in existing CSV rows (apply the YYYY-MM-DD standard).\n\n## STEP 6 — Send Anna a Telegram summary:\n- Events archived (past)\n- New events added (name, date, location, junior availability)\n- Any corrections made\n- If nothing changed: say so in one sentence\nKeep it brief and scannable.",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8437776204"
+      },
+      "state": {
+        "nextRunAtMs": 1782864000000,
+        "lastRunAtMs": 1780985515321,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 719477,
+        "lastError": "HttpError: Network request for 'sendMessage' failed!",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      },
+      "status": "error"
+    }
+  ],
+  "total": 4,
+  "offset": 0,
+  "limit": 4,
+  "hasMore": false,
+  "nextOffset": null,
+  "deliveryPreviews": {
+    "16c48b00-559f-4bc7-9c9b-2c7120d83e00": {
+      "label": "announce -> telegram:8437776204",
+      "detail": "explicit"
+    },
+    "f72a846f-5925-4845-ab3c-0832c283cbd3": {
+      "label": "announce -> telegram:8437776204",
+      "detail": "explicit"
+    },
+    "8c71f6b4-d6e5-4e19-9e10-82c46de49bae": {
+      "label": "announce -> telegram:8437776204",
+      "detail": "explicit"
+    },
+    "36da79a7-76f8-49d9-8fd9-78b9ca8109e5": {
+      "label": "announce -> telegram:8437776204",
+      "detail": "explicit"
+    }
+  }
+}

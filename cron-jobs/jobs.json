@@ -17,7 +17,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Check bills and todos for Anna's morning digest.\n\nSTEP 1 — Read both files:\ncat ~/.openclaw/workspace/Bills.md\ncat ~/.openclaw/workspace/Todo.md\n\nSTEP 2 — Check today's date.\n\nSTEP 3 — From Bills.md, check ## Upcoming & Unpaid for bills due today or in the next 3 days.\n\nSTEP 4 — From Todo.md, list all rows where Status is Pending.\n\nSTEP 5 — Return a plain text morning digest:\n\n🌅 Good morning Anna — [date]\n\n💳 Bills due soon:\n- [Bill] — $[amount] due [date] via [provider]\n(or: No bills due in the next 3 days.)\n\n📋 Outstanding todos:\n- [Task] (added [date])\n(or: No outstanding todos.)\n\nIf nothing due and no todos: 'All clear for today — no bills or todos outstanding.'\n\nCRITICAL: Read both files and return the digest. Nothing else.",
+        "message": "Check bills and todos for morning digest.\n\nSTEP 1 — Read both files:\ncat ~/.openclaw/workspace/Bills.md\ncat ~/.openclaw/workspace/Todo.md\n\nSTEP 2 — Check today's date.\n\nSTEP 3 — From Bills.md, check ## Upcoming & Unpaid for bills due today or in the next 3 days.\n\nSTEP 4 — From Todo.md, list all rows where Status is Pending.\n\nSTEP 5 — Return a plain text morning digest:\n\n🌅 Good morning — [date]\n\n💳 Bills due soon:\n- [Bill] — $[amount] due [date] via [provider]\n(or: No bills due in the next 3 days.)\n\n📋 Outstanding todos:\n- [Task] (added [date])\n(or: No outstanding todos.)\n\nIf nothing due and no todos: 'All clear for today — no bills or todos outstanding.'\n\nCRITICAL: Read both files and return the digest. Nothing else.",
         "model": "openrouter/deepseek/deepseek-v4-pro",
         "timeoutSeconds": 180,
         "lightContext": true

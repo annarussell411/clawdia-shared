@@ -1,4 +1,4 @@
-# Clawdia Scripts
+# Scripts for Zotero literature scan 
 
 ## zotero_summarise.py
 

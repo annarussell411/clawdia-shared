@@ -33,10 +33,10 @@ it can assist.
 - `identity/` — Clawdia's identity files (AGENTS, SOUL, IDENTITY, USER, MEMORY)
 - `skills/` — Custom skills (grocery-manager, taskflow, etc)
 - `cron-jobs/` — Scheduled task configurations and prompts for rcurring tasks 
-- `workspace/` — Workspace files snapshot
-- `logs/` — Selected log snapshots for research
-- `docs/` — Setup notes and architecture decisions
+- `skills/` —  Specific skills that Clawdia can use via Telegram to assist user 
 
 ## Maintenance
  
-- Sync identity from live workspace: `./scripts/sync-from-workspace.sh`
+- Sync files from live workspace: `./scripts/sync-from-workspace.sh`
+- Sync files to live workspace: `./scripts/sync-to-workspace.sh` (be careful with this one - it will overwrite files in 
+- the workspace with what's in the repo, so make sure to pull any changes from the workspace before running)

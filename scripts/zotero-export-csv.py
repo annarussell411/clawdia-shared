@@ -180,7 +180,7 @@ def export_collection(collection_name: str, output_path: str, triage_filter: str
         return
 
     print(f"📚 Fetching items from '{collection_name}'...")
-    items = zot.collection_items_top(collection_key)
+    items = zot.everything(zot.collection_items_top(collection_key))
     print(f"✓ Found {len(items)} items")
 
     if triage_filter:

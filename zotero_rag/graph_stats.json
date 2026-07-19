@@ -1,0 +1,427 @@
+{
+  "generated": "2026-06-28T11:53:11.819638",
+  "total_papers": 404,
+  "papers_with_edges": 56,
+  "total_edges": 134,
+  "total_citations_matched": 134,
+  "total_citations_unmatched": 9025,
+  "match_methods": {
+    "title_fuzzy_1.00": 39,
+    "doi_exact": 87,
+    "author_year_title_0.67": 1,
+    "author_year_title_0.63": 1,
+    "title_fuzzy_0.91": 2,
+    "author_year_title_0.60": 1,
+    "author_year_title_0.61": 1,
+    "author_year_title_0.81": 1,
+    "title_fuzzy_0.97": 1
+  },
+  "density": 0.000823,
+  "most_cited": [
+    {
+      "zotero_key": "B3JMXMDR",
+      "citations": 8,
+      "title": "Some Social and Psychological Consequences of the Longwall Method of Coal-Getting: An Examination of the Psychological Situation and Defences of a Work Group in Relation to the Social Structure and Technological Content of the Work System",
+      "authors": "Trist, E. L.",
+      "date": "1951-02-00 02/1951"
+    },
+    {
+      "zotero_key": "6U7QLTSE",
+      "citations": 7,
+      "title": "Agentic AI: Autonomous Intelligence for Complex Goals\u2014A Comprehensive Survey",
+      "authors": "Acharya, Deepak Bhaskar",
+      "date": "2025-00-00 2025"
+    },
+    {
+      "zotero_key": "AQFLAYST",
+      "citations": 7,
+      "title": "A Survey on Large Language Model based Autonomous Agents",
+      "authors": "Wang, Lei",
+      "date": "2024-12-00 12/2024"
+    },
+    {
+      "zotero_key": "UZQGU9ZJ",
+      "citations": 6,
+      "title": "Deep learning",
+      "authors": "LeCun, Yann",
+      "date": "2015-05-28 2015-05-28"
+    },
+    {
+      "zotero_key": "SKKQ9768",
+      "citations": 6,
+      "title": "Training language models to follow instructions with human feedback",
+      "authors": "Ouyang, Long",
+      "date": "2022-00-00 2022"
+    },
+    {
+      "zotero_key": "7SE3C9U4",
+      "citations": 6,
+      "title": "Artificial Intelligence, Values, and Alignment",
+      "authors": "Gabriel, Iason",
+      "date": "2020-09-00 09/2020"
+    },
+    {
+      "zotero_key": "5MF5GL7H",
+      "citations": 5,
+      "title": "Socio-technical systems: From design methods to systems engineering",
+      "authors": "Baxter, Gordon",
+      "date": "2011-01-00 1/2011"
+    },
+    {
+      "zotero_key": "CCCNTLSV",
+      "citations": 5,
+      "title": "Artificial intelligence: a modern approach",
+      "authors": "Russell, Stuart J.",
+      "date": "2016-00-00 2016"
+    },
+    {
+      "zotero_key": "CLF7I6ZL",
+      "citations": 4,
+      "title": "Attention is All you Need",
+      "authors": "Vaswani, Ashish",
+      "date": "2017-00-00 2017"
+    },
+    {
+      "zotero_key": "N3UKFSHU",
+      "citations": 4,
+      "title": "Constitutional AI: Harmlessness from AI feedback",
+      "authors": "Bai, Yuntao",
+      "date": "2022-00-00 2022"
+    },
+    {
+      "zotero_key": "W8A935Q2",
+      "citations": 4,
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Wei, Jason",
+      "date": "2023-01-10 2023-01-10"
+    },
+    {
+      "zotero_key": "FNGVNM4L",
+      "citations": 3,
+      "title": "Treating socio\u2010technical systems as engineering systems: some conceptual problems",
+      "authors": "Kroes, Peter",
+      "date": "2006-11-00 11/2006"
+    },
+    {
+      "zotero_key": "L39RVG4M",
+      "citations": 3,
+      "title": "AI Agents vs. Agentic AI: A Conceptual taxonomy, applications and challenges",
+      "authors": "Sapkota, Ranjan",
+      "date": "2026-02-00 02/2026"
+    },
+    {
+      "zotero_key": "APHTUJSQ",
+      "citations": 3,
+      "title": "The design of intelligent socio-technical systems",
+      "authors": "Jones, Andrew J. I.",
+      "date": "2013-01-00 1/2013"
+    },
+    {
+      "zotero_key": "4ATUICH4",
+      "citations": 3,
+      "title": "A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence",
+      "authors": "McCarthy, John",
+      "date": "1955-00-00 1955"
+    },
+    {
+      "zotero_key": "PB5828N6",
+      "citations": 3,
+      "title": "Reflections: Sociotechnical Systems Design and Organization Change",
+      "authors": "Pasmore, William",
+      "date": "2019-04-03 2019-04-03"
+    },
+    {
+      "zotero_key": "4R2535A8",
+      "citations": 3,
+      "title": "The Next Generation of Research on IS Use: A Theoretical Framework of Delegation to and from Agentic IS Artifacts",
+      "authors": "Baird, Aaron",
+      "date": "2021-03-01 2021-03-01"
+    },
+    {
+      "zotero_key": "4C3V22ZJ",
+      "citations": 3,
+      "title": "Agentic Large Language Models, a survey",
+      "authors": "Plaat, Aske",
+      "date": "2025-12-30 2025-12-30"
+    },
+    {
+      "zotero_key": "AZNTJ2IP",
+      "citations": 2,
+      "title": "Socio-technical systems and interaction design \u2013 21st century relevance",
+      "authors": "Maguire, Martin",
+      "date": "2014-03-00 03/2014"
+    },
+    {
+      "zotero_key": "2EYV9D6E",
+      "citations": 2,
+      "title": "Human-artificial interaction in the age of agentic AI: a system-theoretical approach",
+      "authors": "Borghoff, Uwe M.",
+      "date": "2025-05-09 2025-5-9"
+    },
+    {
+      "zotero_key": "LFDBDAAN",
+      "citations": 2,
+      "title": "The Extended Mind",
+      "authors": "Clark, A.",
+      "date": "1998-01-01 1998-01-01"
+    },
+    {
+      "zotero_key": "5UGITDL6",
+      "citations": 2,
+      "title": "The evolution of socio-technical systems: a conceptual framework and an action research program",
+      "authors": "Trist, E. L.",
+      "date": "1981-00-00 1981"
+    },
+    {
+      "zotero_key": "4IFWKGQ6",
+      "citations": 2,
+      "title": "Defending ChatGPT against jailbreak attack via self-reminders",
+      "authors": "Xie, Yueqi",
+      "date": "2023-12-12 2023-12-12"
+    },
+    {
+      "zotero_key": "R2AG25IN",
+      "citations": 2,
+      "title": "GPT-4 Technical Report",
+      "authors": "OpenAI",
+      "date": "2024-03-04 2024-03-04"
+    },
+    {
+      "zotero_key": "L9KI48L3",
+      "citations": 2,
+      "title": "Embedding values in artificial intelligence (AI) systems",
+      "authors": "Van de Poel, Ibo",
+      "date": "2020-09-00 09/2020"
+    }
+  ],
+  "most_citing": [
+    {
+      "zotero_key": "GI54USQL",
+      "cites": 12,
+      "title": "Evaluating and Regulating Agentic AI: A Study of Benchmarks, Metrics, and Regulation",
+      "authors": "",
+      "date": "2025-12-04 2025-12-04"
+    },
+    {
+      "zotero_key": "FKL9Q9DK",
+      "cites": 8,
+      "title": "Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms",
+      "authors": "Hu, Botao Amber",
+      "date": "2026-05-29 2026-05-29"
+    },
+    {
+      "zotero_key": "9CJYQF7Z",
+      "cites": 8,
+      "title": "Towards trustworthy agentic AI: a comprehensive survey of safety, robustness, privacy, and system security",
+      "authors": "Qi, Jinhu",
+      "date": "2026-04-29 2026-04-29"
+    },
+    {
+      "zotero_key": "PL5VZWG9",
+      "cites": 6,
+      "title": "An Intelligent Sociotechnical Systems (iSTS) Framework: Enabling a Hierarchical Human-Centered AI (hHCAI) Approach",
+      "authors": "Xu, Wei",
+      "date": "2025-03-00 3/2025"
+    },
+    {
+      "zotero_key": "FFU6XY35",
+      "cites": 5,
+      "title": "A sociotechnical system perspective on AI",
+      "authors": "Kudina, Olya",
+      "date": "2024-06-12 2024-06-12"
+    },
+    {
+      "zotero_key": "KTGYCGAI",
+      "cites": 5,
+      "title": "AgentAI: A comprehensive survey on autonomous agents in distributed AI for industry 4.0",
+      "authors": "Piccialli, Francesco",
+      "date": "2025-10-00 10/2025"
+    },
+    {
+      "zotero_key": "3XX9J394",
+      "cites": 5,
+      "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+      "authors": "Bandi, Ajay",
+      "date": "2025-09-04 2025-09-04"
+    },
+    {
+      "zotero_key": "UC8WP43Z",
+      "cites": 5,
+      "title": "Agentic AI: The age of reasoning\u2014A review",
+      "authors": "Nisa, Ume",
+      "date": "2026-03-00 03/2026"
+    },
+    {
+      "zotero_key": "L39RVG4M",
+      "cites": 4,
+      "title": "AI Agents vs. Agentic AI: A Conceptual taxonomy, applications and challenges",
+      "authors": "Sapkota, Ranjan",
+      "date": "2026-02-00 02/2026"
+    },
+    {
+      "zotero_key": "RD59IY5D",
+      "cites": 4,
+      "title": "Toward Constitutional Autonomy in AI Systems: A Theoretical Framework for Aligned Agentic Intelligence",
+      "authors": "Torgbi Agbemabiese, William",
+      "date": "2026-00-00 2026"
+    },
+    {
+      "zotero_key": "VSBXDTTV",
+      "cites": 4,
+      "title": "Toward Constitutional Autonomy in AI Systems: A Theoretical Framework for Aligned Agentic Intelligence",
+      "authors": "Torgbi Agbemabiese, William",
+      "date": "2026-00-00 2026"
+    },
+    {
+      "zotero_key": "K7LUB6RU",
+      "cites": 4,
+      "title": "Navigating the Ethics of Artificial Intelligence",
+      "authors": "Harris, Jack",
+      "date": "2025-11-26 2025-11-26"
+    },
+    {
+      "zotero_key": "98B6IQIH",
+      "cites": 3,
+      "title": "Antecedents and outcomes of artificial intelligence adoption and application in the workplace: the socio-technical system theory perspective",
+      "authors": "Yu, Xinying",
+      "date": "2023-01-13 2023-01-13"
+    },
+    {
+      "zotero_key": "RYYM7Y47",
+      "cites": 3,
+      "title": "A taxonomy of interactions in socio-technical systems: A functional perspective",
+      "authors": "Abreu Saurin, Tarcisio",
+      "date": "2020-01-00 01/2020"
+    },
+    {
+      "zotero_key": "L9KI48L3",
+      "cites": 3,
+      "title": "Embedding values in artificial intelligence (AI) systems",
+      "authors": "Van de Poel, Ibo",
+      "date": "2020-09-00 09/2020"
+    },
+    {
+      "zotero_key": "LLRBBFP6",
+      "cites": 3,
+      "title": "Advancing sociotechnical systems theory: New principles for human-robot team design and development",
+      "authors": "Ang, Karyne C.S.",
+      "date": "2025-11-00 11/2025"
+    },
+    {
+      "zotero_key": "9QGTT5WF",
+      "cites": 2,
+      "title": "Toward an Integration of Deep Learning and Neuroscience",
+      "authors": "Marblestone, Adam H.",
+      "date": "2016-09-14 2016-09-14"
+    },
+    {
+      "zotero_key": "58QIDHXJ",
+      "cites": 2,
+      "title": "CERN for AI: a theoretical framework for autonomous simulation-based artificial intelligence testing and alignment",
+      "authors": "Boji\u0107, Ljubi\u0161a",
+      "date": "2024-12-00 Dec 2024"
+    },
+    {
+      "zotero_key": "GDFNZTFP",
+      "cites": 2,
+      "title": "The group mind of hybrid teams with humans and intelligent agents in knowledge-intense work",
+      "authors": "Hopf, Konstantin",
+      "date": "2025-03-00 03/2025"
+    },
+    {
+      "zotero_key": "9LN4E4ZY",
+      "cites": 2,
+      "title": "AI Alignment: A Contemporary Survey",
+      "authors": "Ji, Jiaming",
+      "date": "2026-04-30 2026-04-30"
+    },
+    {
+      "zotero_key": "PB5828N6",
+      "cites": 2,
+      "title": "Reflections: Sociotechnical Systems Design and Organization Change",
+      "authors": "Pasmore, William",
+      "date": "2019-04-03 2019-04-03"
+    },
+    {
+      "zotero_key": "4R2535A8",
+      "cites": 2,
+      "title": "The Next Generation of Research on IS Use: A Theoretical Framework of Delegation to and from Agentic IS Artifacts",
+      "authors": "Baird, Aaron",
+      "date": "2021-03-01 2021-03-01"
+    },
+    {
+      "zotero_key": "S24CP7BD",
+      "cites": 2,
+      "title": "Contestable AI by Design: Towards a Framework",
+      "authors": "Alfrink, Kars",
+      "date": "2022-08-13 2022-08-13"
+    },
+    {
+      "zotero_key": "L3LL4RPA",
+      "cites": 2,
+      "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
+      "authors": "Mohammadi, Mahmoud",
+      "date": "2025-08-03 2025-08-03"
+    },
+    {
+      "zotero_key": "H57K2H7I",
+      "cites": 2,
+      "title": "Semantic Fusion: Verifiable Alignment in Decentralized Multi-Agent Systems",
+      "authors": "Zaichyk, Sofiya",
+      "date": "2026-09-30 2026-09-30"
+    }
+  ],
+  "orphan_papers": 307,
+  "orphan_pct": 76.0,
+  "weakly_connected_components": 312,
+  "largest_component_size": 89,
+  "largest_component_pct": 22.0,
+  "louvain_communities": 318,
+  "top_communities": [
+    {
+      "community": 4,
+      "size": 21,
+      "sample_titles": [
+        "The impact of digital transformation on new quality productivity: a moderating a",
+        "Treating socio\u2010technical systems as engineering systems: some conceptual problem",
+        "Socio-technical systems and interaction design \u2013 21st century relevance"
+      ]
+    },
+    {
+      "community": 5,
+      "size": 17,
+      "sample_titles": [
+        "Attention is All you Need",
+        "Social systems engineering (SSE): Architecture, design & optimization of socio-t",
+        "CERN for AI: a theoretical framework for autonomous simulation-based artificial "
+      ]
+    },
+    {
+      "community": 24,
+      "size": 15,
+      "sample_titles": [
+        "Toward Constitutional Autonomy in AI Systems: A Theoretical Framework for Aligne",
+        "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challe",
+        "Training language models to follow instructions with human feedback"
+      ]
+    },
+    {
+      "community": 10,
+      "size": 13,
+      "sample_titles": [
+        "Reactive Reinforcement Learning in Asynchronous Environments",
+        "The atoms of neural computation",
+        "Toward an Integration of Deep Learning and Neuroscience"
+      ]
+    },
+    {
+      "community": 47,
+      "size": 9,
+      "sample_titles": [
+        "Safeguarding large language models: a survey",
+        "Defending ChatGPT against jailbreak attack via self-reminders",
+        "AI Alignment: A Contemporary Survey"
+      ]
+    }
+  ]
+}

@@ -188,7 +188,7 @@ def find_collection_by_name(name: str):
 
 def get_collection_items(collection_key: str):
     """Get all top-level items (papers) in a collection."""
-    return zot.collection_items_top(collection_key)
+    return zot.everything(zot.collection_items_top(collection_key))
 
 
 def get_pdf_attachment_path(item_key: str) -> Optional[Path]:
@@ -217,7 +217,14 @@ def item_has_tag(item: dict, tag: str) -> bool:
 # ============================================================================
 
 def extract_pdf_text(pdf_path: Path, max_chars: int = 50000) -> str:
-    """Extract text from a PDF, capped at max_chars to control token cost."""
+    """Extract text from a PDF, capped at max_chars to control token cost.
+
+    Tries pypdf first (fast), falls back to pdfplumber for malformed or
+    image-heavy PDFs.
+    """
+    full_text = ""
+
+    # Try pypdf first
     try:
         reader = PdfReader(str(pdf_path))
         text_parts = []
@@ -228,16 +235,38 @@ def extract_pdf_text(pdf_path: Path, max_chars: int = 50000) -> str:
             total_chars += len(page_text)
             if total_chars >= max_chars:
                 break
-        #return "\n".join(text_parts)[:max_chars]
         full_text = "\n".join(text_parts)
-    # Strip null bytes and other control chars that break subprocess
-        full_text = ''.join(c for c in full_text if c == '\n' or c == '\t' or ord(c) >= 32)
-        return full_text[:max_chars]
     except Exception as e:
-        print(f"  ! Could not read PDF: {e}")
+        print(f"  ! pypdf failed ({e}), trying pdfplumber...")
+
+    # If pypdf returned nothing OR threw an exception, try pdfplumber
+    if not full_text.strip():
+        try:
+            import pdfplumber
+            text_parts = []
+            total_chars = 0
+            with pdfplumber.open(str(pdf_path)) as pdf:
+                for page in pdf.pages:
+                    page_text = page.extract_text() or ""
+                    text_parts.append(page_text)
+                    total_chars += len(page_text)
+                    if total_chars >= max_chars:
+                        break
+            full_text = "\n".join(text_parts)
+            if full_text.strip():
+                print("  ✓ pdfplumber extracted text successfully")
+        except Exception as e2:
+            print(f"  ! pdfplumber also failed: {e2}")
+
+    if not full_text.strip():
+        print(f"  ! Both pypdf and pdfplumber returned empty - likely scanned PDF without OCR")
         return ""
 
-
+    # Strip null bytes
+    full_text = full_text.replace('\x00', '')
+    # Strip lone surrogate characters
+    full_text = full_text.encode('utf-8', errors='ignore').decode('utf-8')
+    return full_text[:max_chars]
 # ============================================================================
 # SUMMARY GENERATION VIA OPENCLAW CLI
 # ============================================================================
@@ -561,3 +590,20 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+# This is a check to see if all items in the collection are being fetched for analysis
+# python3 -c "
+# import os
+# from pyzotero import zotero
+# zot = zotero.Zotero(int(os.environ['ZOTERO_USER_ID']), 'user', os.environ['ZOTERO_API_KEY'])
+
+# for c in zot.collections():
+    #     if 'New - To Read' in c['data']['name']:
+    #         print(f\"Collection: {c['data']['name']}\")
+    #         print(f\"Reported item count: {c['meta'].get('numItems')}\")
+    #         items = zot.everything(zot.collection_items_top(c['key']))
+    #         print(f\"Actually fetched: {len(items)}\")
+#         break
+# "
